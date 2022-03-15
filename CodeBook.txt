@@ -1,0 +1,40 @@
+features: table 561x2
+It contains the characteristics that will be used as variables of both the data Train and Test.
+----------------------------
+# data TEST
+subject_test: table 2947x1
+x_test: table 2947x561
+y_test: table 2947x1
+test: table 2947x563
+It is the composition of the data Test
+----------------------------
+
+# data TRAIN
+subject_train: table 7352x1
+x_train: table 7352x561
+y_train: table 7352x1
+train: table 7352x563
+It is the composition of the data Train
+----------------------------
+# 1. Combina los conjuntos de entrenamiento y prueba para crear un conjunto de
+# datos.
+MergeData <- rbind(train, test)
+MergeData: table 10299x563
+Mergedata It is the processed and merged data of Test and Train
+----------------------------
+# 2. Extrae solo las mediciones sobre la media y la desviación estándar para
+# cada medición. 
+
+data2: table 10299x88
+----------------------------
+# 3.Utiliza nombres de actividad descriptivos para asignar un nombre a las 
+#actividades del conjunto de datos
+activity_labels: table 6x2
+----------------------------
+# 5. A partir del conjunto de datos en el paso 4, crea un segundo 
+# conjunto de datos ordenado e independiente con el promedio de cada variable
+# para cada actividad y cada sujeto.
+
+TidyData: table 180x81
+
+It is the final data after answering all the questions of the project
